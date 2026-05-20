@@ -1,0 +1,82 @@
+[
+  {
+    "id": "bibimbap",
+    "name": "비빔밥",
+    "name_ko": "비빔밥",
+    "culture": "korean",
+    "minigame": "memory",
+    "ingredients": ["rice", "spinach", "carrot", "egg", "gochujang"],
+    "price": 12,
+    "unlock_condition": "default"
+  },
+  {
+    "id": "doenjang_jjigae",
+    "name": "된장찌개",
+    "name_ko": "된장찌개",
+    "culture": "korean",
+    "minigame": "timing",
+    "ingredients": ["tofu", "zucchini", "mushroom", "doenjang"],
+    "price": 10,
+    "unlock_condition": "episode_tiger_1"
+  },
+  {
+    "id": "sandwich",
+    "name": "샌드위치",
+    "name_ko": "샌드위치",
+    "culture": "western",
+    "minigame": "stack",
+    "ingredients": ["bread", "lettuce", "tomato", "cheese", "ham"],
+    "price": 9,
+    "unlock_condition": "default"
+  },
+  {
+    "id": "pasta",
+    "name": "파스타",
+    "name_ko": "파스타",
+    "culture": "western",
+    "minigame": "timing",
+    "ingredients": ["pasta", "tomato_sauce", "basil", "parmesan"],
+    "price": 13,
+    "unlock_condition": "episode_fox_1"
+  },
+  {
+    "id": "sushi",
+    "name": "초밥",
+    "name_ko": "초밥",
+    "culture": "japanese",
+    "minigame": "slicer",
+    "ingredients": ["rice", "salmon", "nori", "wasabi"],
+    "price": 15,
+    "unlock_condition": "default"
+  },
+  {
+    "id": "ramen",
+    "name": "라멘",
+    "name_ko": "라멘",
+    "culture": "japanese",
+    "minigame": "timing",
+    "ingredients": ["noodle", "broth", "chashu", "egg", "nori"],
+    "price": 12,
+    "unlock_condition": "episode_tanuki_1"
+  },
+  {
+    "id": "jjajangmyeon",
+    "name": "짜장면",
+    "name_ko": "짜장면",
+    "culture": "chinese",
+    "minigame": "memory",
+    "ingredients": ["noodle", "black_bean", "pork", "onion"],
+    "price": 10,
+    "unlock_condition": "default"
+  },
+  {
+    "id": "dimsum",
+    "name": "딤섬",
+    "name_ko": "딤섬",
+    "culture": "chinese",
+    "minigame": "stack",
+    "ingredients": ["wrapper", "shrimp", "pork", "ginger"],
+    "price": 14,
+    "unlock_condition": "episode_panda_1"
+  }
+]

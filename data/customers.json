@@ -1,0 +1,74 @@
+[
+  {
+    "id": "tiger",
+    "name": "호랑님",
+    "animal": "tiger",
+    "culture": "korean",
+    "patience": 35,
+    "preferred_recipes": ["bibimbap", "doenjang_jjigae"],
+    "episode_id": "ep_tiger",
+    "episode_total_steps": 4,
+    "reward_recipe": "doenjang_jjigae",
+    "personality": "듬직하고 과묵하지만 음식에 진심인 중년 호랑이"
+  },
+  {
+    "id": "rabbit",
+    "name": "솜이",
+    "animal": "rabbit",
+    "culture": "korean",
+    "patience": 20,
+    "preferred_recipes": ["bibimbap"],
+    "episode_id": "ep_rabbit",
+    "episode_total_steps": 3,
+    "reward_recipe": "tteokbokki",
+    "personality": "수험생. 항상 바쁘고 조금 예민하지만 마음은 따뜻함"
+  },
+  {
+    "id": "fox",
+    "name": "코코",
+    "animal": "fox",
+    "culture": "western",
+    "patience": 25,
+    "preferred_recipes": ["sandwich", "pasta"],
+    "episode_id": "ep_fox",
+    "episode_total_steps": 4,
+    "reward_recipe": "pasta",
+    "personality": "첫 자취를 시작한 새내기. 요리를 배우고 싶어함"
+  },
+  {
+    "id": "bear",
+    "name": "베어",
+    "animal": "bear",
+    "culture": "western",
+    "patience": 40,
+    "preferred_recipes": ["sandwich", "pasta"],
+    "episode_id": "ep_bear",
+    "episode_total_steps": 3,
+    "reward_recipe": "salad",
+    "personality": "다이어트 중인 대식가. 항상 배고프고 의지가 약함"
+  },
+  {
+    "id": "tanuki",
+    "name": "타누키",
+    "animal": "raccoon",
+    "culture": "japanese",
+    "patience": 30,
+    "preferred_recipes": ["sushi", "ramen"],
+    "episode_id": "ep_tanuki",
+    "episode_total_steps": 5,
+    "reward_recipe": "ramen",
+    "personality": "고향이 그리운 일본 출신 여행자. 향수병 있음"
+  },
+  {
+    "id": "panda",
+    "name": "판판",
+    "animal": "panda",
+    "culture": "chinese",
+    "patience": 28,
+    "preferred_recipes": ["jjajangmyeon", "dimsum"],
+    "episode_id": "ep_panda",
+    "episode_total_steps": 4,
+    "reward_recipe": "dimsum",
+    "personality": "워커홀릭 직장인 판다. 밥 먹는 것만이 유일한 휴식"
+  }
+]

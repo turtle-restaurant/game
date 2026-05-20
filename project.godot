@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="거북이식당"
+config/description="힐링 아케이드 + 운영 시뮬레이션 게임"
+config/version="0.1.0"
+run/main_scene="res://scenes/main/title_screen.tscn"
+config/features=PackedStringArray("4.6", "Mobile")
+config/name/ko="거북이식당"
+
+[autoload]
+
+GameManager="*res://scripts/core/GameManager.gd"
+
+[display]
+
+window/size/viewport_width=390
+window/size/viewport_height=844
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation="portrait"
+
+[rendering]
+
+renderer/rendering_method="mobile"
