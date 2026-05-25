@@ -3,47 +3,185 @@
     "file": "episodes.json",
     "description": "에피소드 손님 스토리 진행 데이터 — 회차별 방문, 대사, 보상 정의",
     "gdd_ref": "GDD_story.md §1.2~1.4 에피소드 손님 / GDD_level.md §6 에피소드 업그레이드",
-    "version": "v1.0",
+    "version": "v1.1",
     "last_updated": "2026-05-25"
+  },
+  "dialogue_structure_note": {
+    "speaker_types": {
+      "tiger": "호림 대사",
+      "turtle": "거북사장 대사",
+      "narrator": "내레이션 — UI에서 글씨색 별도 처리"
+    },
+    "timing_types": {
+      "pre_game": "메인게임 플레이 전 — 오픈 버튼 클릭 후 에피소드 전개",
+      "post_game": "메인게임 플레이 후 — 점수 확인 전 에피소드 전개"
+    }
   },
   "episodes": [
     {
       "id": "ep_tiger",
       "customer_id": "tiger",
-      "name_ko": "호랑님 에피소드",
+      "name_ko": "호림 에피소드",
       "keyword": "독립 후 첫 출발 (사회초년생)",
-      "total_steps": 4,
-      "status": "outline_complete",
+      "total_steps": 5,
+      "status": "script_complete",
       "completion_reward": {
         "type": "interior_item",
-        "item_id": null,
-        "description": "호랑님 방문률 상승 인테리어 아이템 — item_id 미확정"
+        "item_id": "horim_business_card",
+        "description": "호림의 명함 — 설치형 아이템, 손님 출현 빈도 5% 증가"
       },
       "special_upgrade_unlock": null,
       "steps": [
         {
           "step": 1,
           "visit_day": 5,
-          "dialogue": null,
-          "status": "placeholder"
+          "session": "lunch",
+          "scenes": [
+            {
+              "timing": "pre_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "점심 영업을 시작하려는데, 처음 보는 손님이 문 앞에 서 있다." },
+                { "scene": 2, "speaker": "turtle", "text": "어서 오세요! 혼자 오셨어요? 자리 편하신 데 앉으세요~" },
+                { "scene": 3, "speaker": "tiger", "text": "...안녕하세요." },
+                { "scene": 4, "speaker": "narrator", "text": "목소리가 어찌나 작은지, 잘 들리지도 않을 정도다. 덩치에 어울리지 않게 쭈뼛쭈뼛 자리를 찾아 앉는 호림." }
+              ]
+            },
+            {
+              "timing": "post_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "turtle", "text": "오늘 음식은 입에 맞으셨어요?" },
+                { "scene": 2, "speaker": "tiger", "text": "...네." },
+                { "scene": 3, "speaker": "narrator", "text": "그 한마디를 끝으로, 호림은 계산을 마치자마자 바람처럼 사라졌다." },
+                { "scene": 4, "speaker": "turtle", "text": "..." },
+                { "scene": 5, "speaker": "narrator", "text": "'내가 너무 말을 걸었나? 부담스러우셨던 건 아닐까...'" }
+              ]
+            }
+          ]
         },
         {
           "step": 2,
           "visit_day": 6,
-          "dialogue": null,
-          "status": "placeholder"
+          "session": "lunch",
+          "scenes": [
+            {
+              "timing": "pre_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "어제 그 손님이 다시 왔다." },
+                { "scene": 2, "speaker": "narrator", "text": "'불편하셨던 건 아닌가 봐. 그래도 음식이 입에 맞으셨나 보지. 다행이다.'" },
+                { "scene": 3, "speaker": "turtle", "text": "어서 오세요, 어제 오셨던 분이네요. 오늘도 같은 자리 드릴게요!" },
+                { "scene": 4, "speaker": "tiger", "text": "...감사합니다." }
+              ]
+            },
+            {
+              "timing": "post_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "괜히 말을 걸었다가 또 부담드릴까 봐, 오늘은 조용히 계산만 하기로 했다." },
+                { "scene": 2, "speaker": "turtle", "text": "오늘도 감사했어요. 또 오세요~" },
+                { "scene": 3, "speaker": "narrator", "text": "그런데 호림이 뭔가 말하려는 듯 입을 열었다 닫았다 한다." },
+                { "scene": 4, "speaker": "tiger", "text": "저... 저기... 저..." },
+                { "scene": 5, "speaker": "turtle", "text": "네?" },
+                { "scene": 6, "speaker": "tiger", "text": "아... 아니에요!" },
+                { "scene": 7, "speaker": "narrator", "text": "그리고 문을 박차고 나가버렸다. 거북사장은 멍하니 닫힌 문을 바라봤다." }
+              ]
+            }
+          ]
         },
         {
           "step": 3,
-          "visit_day": 12,
-          "dialogue": null,
-          "status": "placeholder"
+          "visit_day": 8,
+          "session": "lunch",
+          "scenes": [
+            {
+              "timing": "pre_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "어제는 오지 않았다. '오늘은 오려나?' 하고 문 쪽을 흘끗거리던 참에—" },
+                { "scene": 2, "speaker": "narrator", "text": "호림이 들어왔다." },
+                { "scene": 3, "speaker": "narrator", "text": "'역시... 호랑이도 제 말하면 온다더니.'" },
+                { "scene": 4, "speaker": "turtle", "text": "어서 오세요!" },
+                { "scene": 5, "speaker": "narrator", "text": "오늘도 주문만 하고 조용히 앉는 호림. 그런데 뭔가 달랐다. 어딘가 단단히 결심한 것 같은 표정이었다." }
+              ]
+            },
+            {
+              "timing": "post_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "tiger", "text": "저... 어제 그냥 나가버려서 죄송했어요." },
+                { "scene": 2, "speaker": "turtle", "text": "아이고, 괜찮아요. 제가 더 말을 많이 걸었나 싶었어요." },
+                { "scene": 3, "speaker": "tiger", "text": "아니에요. 제가 원래 좀... 이런 데 익숙하질 않아서요." },
+                { "scene": 4, "speaker": "tiger", "text": "저 원래 산골짜기 마을에 살았거든요. 근데 갑자기 도시로 올라오니까 뭔가 다 낯설고 당황스러워서..." },
+                { "scene": 5, "speaker": "turtle", "text": "그렇군요. 혼자 올라오셨어요?" },
+                { "scene": 6, "speaker": "tiger", "text": "네. 취업 준비하고 있어요. 근처 독서실에서 공부하는데... 사장님 밥이 너무 맛있어서 매일 오게 됐어요." },
+                { "scene": 7, "speaker": "turtle", "text": "아이고, 고마워요." },
+                { "scene": 8, "speaker": "tiger", "text": "근데 사실... 당분간은 좀 더 열심히 해야 할 것 같아서, 한동안은 못 올 것 같아요." },
+                { "scene": 9, "speaker": "tiger", "text": "근데 그냥 그렇게 사라지기엔 너무 이상할 것 같아서... 용기 내서 말씀드리는 거예요." },
+                { "scene": 10, "speaker": "narrator", "text": "거북사장은 잠시 호림을 바라봤다. 뭔가를 꾹 참으면서도, 열심히 해보려는 마음이 눈빛에 다 보였다." },
+                { "scene": 11, "speaker": "turtle", "text": "잘 됐어요. 진짜로요." },
+                { "scene": 12, "speaker": "turtle", "text": "열심히 하시다가 합격하면, 그날 밥은 제가 공짜로 드릴게요." },
+                { "scene": 13, "speaker": "tiger", "text": "...정말요?" },
+                { "scene": 14, "speaker": "turtle", "text": "약속해요. 꼭 합격 소식 들고 오세요." },
+                { "scene": 15, "speaker": "tiger", "text": "...네. 열심히 할게요." }
+              ]
+            }
+          ]
         },
         {
           "step": 4,
           "visit_day": 14,
-          "dialogue": null,
-          "status": "placeholder"
+          "session": "dinner",
+          "scenes": [
+            {
+              "timing": "post_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "저녁 영업이 끝나고, 문을 닫으려는 참이었다." },
+                { "scene": 2, "speaker": "narrator", "text": "그때, 유리문 너머로 익숙한 실루엣이 보였다." },
+                { "scene": 3, "speaker": "tiger", "text": "저... 혹시 아직 열려 있나요?" },
+                { "scene": 4, "speaker": "turtle", "text": "호림 씨? 이 시간에 웬일이에요!" },
+                { "scene": 5, "speaker": "tiger", "text": "저... 오늘 합격했어요." },
+                { "scene": 6, "speaker": "narrator", "text": "거북사장은 잠깐 말을 잃었다." },
+                { "scene": 7, "speaker": "turtle", "text": "정말요?! 진짜로요?!" },
+                { "scene": 8, "speaker": "tiger", "text": "네. 꼭 사장님한테 먼저 말씀드리고 싶었어요." },
+                { "scene": 9, "speaker": "turtle", "text": "잘 됐다, 정말 잘 됐어요! 근데 오늘은 이미 다 정리를 해버려서..." },
+                { "scene": 10, "speaker": "turtle", "text": "내일 저녁에 다시 와요. 약속한 거 꼭 지킬게요." },
+                { "scene": 11, "speaker": "tiger", "text": "...네. 내일 올게요." },
+                { "scene": 12, "speaker": "narrator", "text": "호림은 꾸벅 인사를 하고 돌아섰다. 거북사장은 그 뒷모습을 보며 혼자 빙그레 웃었다." }
+              ]
+            }
+          ]
+        },
+        {
+          "step": 5,
+          "visit_day": 15,
+          "session": "dinner",
+          "scenes": [
+            {
+              "timing": "pre_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "저녁 영업이 한창일 때, 문이 열렸다." },
+                { "scene": 2, "speaker": "narrator", "text": "호림이었다. 그런데... 어딘가 많이 지쳐 보였다. 머리도 헝클어지고, 넥타이도 반쯤 풀려 있었다." },
+                { "scene": 3, "speaker": "turtle", "text": "호림 씨, 왔어요! 근데 많이 힘들어 보이는데..." },
+                { "scene": 4, "speaker": "tiger", "text": "늦어서 죄송해요. 일단... 앉아도 될까요?" },
+                { "scene": 5, "speaker": "turtle", "text": "그럼요, 얼른 앉아요. 오늘 뭐 드실 거예요?" }
+              ]
+            },
+            {
+              "timing": "post_game",
+              "dialogue": [
+                { "scene": 1, "speaker": "narrator", "text": "밥을 다 먹고 나서도 호림은 한참을 자리에 앉아 있었다." },
+                { "scene": 2, "speaker": "tiger", "text": "오늘 첫 출근이었는데..." },
+                { "scene": 3, "speaker": "tiger", "text": "실수를 너무 많이 했어요. 보고서 파일 날리고, 회의 시간도 잘못 알고 있고..." },
+                { "scene": 4, "speaker": "narrator", "text": "호림의 눈가가 살짝 붉어졌다." },
+                { "scene": 5, "speaker": "tiger", "text": "저 잘 할 수 있을까요?" },
+                { "scene": 6, "speaker": "turtle", "text": "첫날부터 완벽한 사람이 어디 있어요." },
+                { "scene": 7, "speaker": "turtle", "text": "내가 식당 처음 열었을 때는요, 주문을 세 번이나 잘못 받고 국을 엎질렀어요. 진짜로요." },
+                { "scene": 8, "speaker": "tiger", "text": "...사장님도요?" },
+                { "scene": 9, "speaker": "turtle", "text": "그래도 지금은 이렇게 하고 있잖아요. 호림 씨도 그렇게 될 거예요." },
+                { "scene": 10, "speaker": "narrator", "text": "호림은 잠깐 눈물을 훔치더니, 작게 고개를 끄덕였다." },
+                { "scene": 11, "speaker": "tiger", "text": "...열심히 할게요. 꼭요." },
+                { "scene": 12, "speaker": "tiger", "text": "그리고 나중에 제가 회사 동료들이랑 꼭 여기 다시 올게요. 사장님 식당 막 소문낼 거예요." },
+                { "scene": 13, "speaker": "turtle", "text": "호호, 기다리고 있을게요." },
+                { "scene": 14, "speaker": "narrator", "text": "호림이 일어나 꾸벅 인사를 했다. 처음 왔을 때보다, 조금은 더 단단해진 뒷모습이었다." }
+              ]
+            }
+          ]
         }
       ]
     },

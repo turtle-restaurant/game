@@ -73,7 +73,7 @@
   "episode_customers": [
     {
       "id": "tiger",
-      "name_ko": "호랑님",
+      "name_ko": "호림",
       "animal": "tiger",
       "type": "episode",
       "patience_sec": {
@@ -82,7 +82,7 @@
       },
       "gold_multiplier": 1.5,
       "episode_id": "ep_tiger",
-      "visit_days": [5, 6, 12, 14],
+      "visit_days": [5, 6, 8, 14, 15],
       "episode_end_day": 15,
       "after_episode": {
         "joins_regular_pool": true,
