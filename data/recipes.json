@@ -1,82 +1,201 @@
-[
-  {
-    "id": "bibimbap",
-    "name": "비빔밥",
-    "name_ko": "비빔밥",
-    "culture": "korean",
-    "minigame": "memory",
-    "ingredients": ["rice", "spinach", "carrot", "egg", "gochujang"],
-    "price": 12,
-    "unlock_condition": "default"
+{
+  "_meta": {
+    "file": "recipes.json",
+    "description": "조리 레시피 데이터 — 재료, 조리기구, 조리 시간, 판매가 정의",
+    "gdd_ref": "GDD_game.md §5 조리기구 영역 / GDD_level.md §2 조리 시간 / §3 탄 음식 / §5 골드 보상",
+    "version": "v1.0",
+    "last_updated": "2026-05-25"
   },
-  {
-    "id": "doenjang_jjigae",
-    "name": "된장찌개",
-    "name_ko": "된장찌개",
-    "culture": "korean",
-    "minigame": "timing",
-    "ingredients": ["tofu", "zucchini", "mushroom", "doenjang"],
-    "price": 10,
-    "unlock_condition": "episode_tiger_1"
+  "cookware_types": {
+    "rice_cooker": "밥솥 — 밥류 전담, 1회 조리 시 3인분 생성",
+    "frying_pan": "프라이팬 — 메인반찬 전담, 1회 조리 시 1인분 생성",
+    "pot": "냄비 — 국/찌개 전담, 1회 조리 시 1인분 생성",
+    "banchan_box": "반찬통 — 서브반찬 전담, 드래그앤드롭 즉시 완성"
   },
-  {
-    "id": "sandwich",
-    "name": "샌드위치",
-    "name_ko": "샌드위치",
-    "culture": "western",
-    "minigame": "stack",
-    "ingredients": ["bread", "lettuce", "tomato", "cheese", "ham"],
-    "price": 9,
-    "unlock_condition": "default"
+  "order_required_rule": {
+    "rice": "필수 — 지정 없을 시 쌀밥으로 자동 처리",
+    "main_dish": "필수 — 1개 이상",
+    "soup": "옵션",
+    "side_dish": "옵션 — 지정 없으면 배추김치+쌈채소 기본 2종 자동 제공"
   },
-  {
-    "id": "pasta",
-    "name": "파스타",
-    "name_ko": "파스타",
-    "culture": "western",
-    "minigame": "timing",
-    "ingredients": ["pasta", "tomato_sauce", "basil", "parmesan"],
-    "price": 13,
-    "unlock_condition": "episode_fox_1"
+  "plate_shapes": {
+    "rice": "동그라미 공기",
+    "main_dish": "높이가 긴 직사각형 접시",
+    "soup": "동그라미 사발/뚝배기",
+    "side_dish": "1×2 분할 직사각형 접시"
   },
-  {
-    "id": "sushi",
-    "name": "초밥",
-    "name_ko": "초밥",
-    "culture": "japanese",
-    "minigame": "slicer",
-    "ingredients": ["rice", "salmon", "nori", "wasabi"],
-    "price": 15,
-    "unlock_condition": "default"
-  },
-  {
-    "id": "ramen",
-    "name": "라멘",
-    "name_ko": "라멘",
-    "culture": "japanese",
-    "minigame": "timing",
-    "ingredients": ["noodle", "broth", "chashu", "egg", "nori"],
-    "price": 12,
-    "unlock_condition": "episode_tanuki_1"
-  },
-  {
-    "id": "jjajangmyeon",
-    "name": "짜장면",
-    "name_ko": "짜장면",
-    "culture": "chinese",
-    "minigame": "memory",
-    "ingredients": ["noodle", "black_bean", "pork", "onion"],
-    "price": 10,
-    "unlock_condition": "default"
-  },
-  {
-    "id": "dimsum",
-    "name": "딤섬",
-    "name_ko": "딤섬",
-    "culture": "chinese",
-    "minigame": "stack",
-    "ingredients": ["wrapper", "shrimp", "pork", "ginger"],
-    "price": 14,
-    "unlock_condition": "episode_panda_1"
-  }
-]
+  "recipes": [
+    {
+      "id": "steamed_rice",
+      "name_ko": "쌀밥",
+      "category": "rice",
+      "order_required": true,
+      "cookware": "rice_cooker",
+      "ingredient": "white_rice",
+      "cook_time_sec": {
+        "base": 5,
+        "upgrade_1": 3,
+        "upgrade_2": 2
+      },
+      "servings_per_cook": 3,
+      "burn_grace_sec": 5,
+      "plate_shape": "round_bowl",
+      "price": 200,
+      "asset_id": "food_steamed_rice"
+    },
+    {
+      "id": "multigrain_rice",
+      "name_ko": "잡곡밥",
+      "category": "rice",
+      "order_required": true,
+      "cookware": "rice_cooker",
+      "ingredient": "multigrain",
+      "cook_time_sec": {
+        "base": 5,
+        "upgrade_1": 3,
+        "upgrade_2": 2
+      },
+      "servings_per_cook": 3,
+      "burn_grace_sec": 5,
+      "plate_shape": "round_bowl",
+      "price": 250,
+      "asset_id": "food_multigrain_rice"
+    },
+    {
+      "id": "bulgogi",
+      "name_ko": "불고기",
+      "category": "main_dish",
+      "order_required": true,
+      "cookware": "frying_pan",
+      "ingredient": "beef",
+      "cook_time_sec": {
+        "base": 3,
+        "upgrade_1": 2,
+        "upgrade_2": 1
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "tall_rect_plate",
+      "price": 500,
+      "asset_id": "food_bulgogi"
+    },
+    {
+      "id": "grilled_fish",
+      "name_ko": "생선구이",
+      "category": "main_dish",
+      "order_required": true,
+      "cookware": "frying_pan",
+      "ingredient": "fish",
+      "cook_time_sec": {
+        "base": 3,
+        "upgrade_1": 2,
+        "upgrade_2": 1
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "tall_rect_plate",
+      "price": 450,
+      "asset_id": "food_grilled_fish"
+    },
+    {
+      "id": "dak_galbi",
+      "name_ko": "닭갈비",
+      "category": "main_dish",
+      "order_required": true,
+      "cookware": "frying_pan",
+      "ingredient": "seasoned_chicken",
+      "cook_time_sec": {
+        "base": 3,
+        "upgrade_1": 2,
+        "upgrade_2": 1
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "tall_rect_plate",
+      "price": 480,
+      "asset_id": "food_dak_galbi"
+    },
+    {
+      "id": "kimchi_jjigae",
+      "name_ko": "김치찌개",
+      "category": "soup",
+      "order_required": false,
+      "cookware": "pot",
+      "ingredient": "kimchi",
+      "cook_time_sec": {
+        "base": 4,
+        "upgrade_1": 2.5,
+        "upgrade_2": 1.5
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "round_bowl",
+      "price": 350,
+      "asset_id": "food_kimchi_jjigae"
+    },
+    {
+      "id": "miyeok_guk",
+      "name_ko": "미역국",
+      "category": "soup",
+      "order_required": false,
+      "cookware": "pot",
+      "ingredient": "seaweed",
+      "cook_time_sec": {
+        "base": 4,
+        "upgrade_1": 2.5,
+        "upgrade_2": 1.5
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "round_bowl",
+      "price": 300,
+      "asset_id": "food_miyeok_guk"
+    },
+    {
+      "id": "kongnamul_guk",
+      "name_ko": "콩나물국",
+      "category": "soup",
+      "order_required": false,
+      "cookware": "pot",
+      "ingredient": "bean_sprout",
+      "cook_time_sec": {
+        "base": 4,
+        "upgrade_1": 2.5,
+        "upgrade_2": 1.5
+      },
+      "servings_per_cook": 1,
+      "burn_grace_sec": 5,
+      "plate_shape": "round_bowl",
+      "price": 280,
+      "asset_id": "food_kongnamul_guk"
+    },
+    {
+      "id": "baechu_kimchi",
+      "name_ko": "배추김치",
+      "category": "side_dish",
+      "order_required": false,
+      "cookware": "banchan_box",
+      "ingredient": "baechu_kimchi_raw",
+      "cook_time_sec": null,
+      "servings_per_cook": 1,
+      "burn_grace_sec": null,
+      "plate_shape": "divided_rect_plate",
+      "price": 100,
+      "asset_id": "food_baechu_kimchi"
+    },
+    {
+      "id": "ssam_veggies",
+      "name_ko": "쌈채소",
+      "category": "side_dish",
+      "order_required": false,
+      "cookware": "banchan_box",
+      "ingredient": "ssam_veggies_raw",
+      "cook_time_sec": null,
+      "servings_per_cook": 1,
+      "burn_grace_sec": null,
+      "plate_shape": "divided_rect_plate",
+      "price": 100,
+      "asset_id": "food_ssam_veggies"
+    }
+  ]
+}

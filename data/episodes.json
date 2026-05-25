@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "file": "episodes.json",
+    "description": "에피소드 손님 스토리 진행 데이터 — 회차별 방문, 대사, 보상 정의",
+    "gdd_ref": "GDD_story.md §1.2~1.4 에피소드 손님 / GDD_level.md §6 에피소드 업그레이드",
+    "version": "v1.0",
+    "last_updated": "2026-05-25"
+  },
+  "episodes": [
+    {
+      "id": "ep_tiger",
+      "customer_id": "tiger",
+      "name_ko": "호랑님 에피소드",
+      "keyword": "독립 후 첫 출발 (사회초년생)",
+      "total_steps": 4,
+      "status": "outline_complete",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "호랑님 방문률 상승 인테리어 아이템 — item_id 미확정"
+      },
+      "special_upgrade_unlock": null,
+      "steps": [
+        {
+          "step": 1,
+          "visit_day": 5,
+          "dialogue": null,
+          "status": "placeholder"
+        },
+        {
+          "step": 2,
+          "visit_day": 6,
+          "dialogue": null,
+          "status": "placeholder"
+        },
+        {
+          "step": 3,
+          "visit_day": 12,
+          "dialogue": null,
+          "status": "placeholder"
+        },
+        {
+          "step": 4,
+          "visit_day": 14,
+          "dialogue": null,
+          "status": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "ep_rabbit",
+      "customer_id": "rabbit",
+      "name_ko": "솜이 에피소드",
+      "keyword": null,
+      "total_steps": null,
+      "status": "unplanned",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "솜이 방문률 상승 인테리어 아이템 — 미확정"
+      },
+      "special_upgrade_unlock": {
+        "target": "pot",
+        "effect": "탄 음식 유예 시간 +5초",
+        "cost_gold": 80000,
+        "required_drop_item": "lucky_pot",
+        "gdd_ref": "GDD_level.md §6 에피소드 업그레이드"
+      },
+      "steps": null
+    },
+    {
+      "id": "ep_fox",
+      "customer_id": "fox",
+      "name_ko": "코코 에피소드",
+      "keyword": null,
+      "total_steps": null,
+      "status": "unplanned",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "코코 방문률 상승 인테리어 아이템 — 미확정"
+      },
+      "special_upgrade_unlock": null,
+      "steps": null
+    },
+    {
+      "id": "ep_bear",
+      "customer_id": "bear",
+      "name_ko": "베어 에피소드",
+      "keyword": null,
+      "total_steps": null,
+      "status": "unplanned",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "베어 방문률 상승 인테리어 아이템 — 미확정"
+      },
+      "special_upgrade_unlock": {
+        "target": "frying_pan",
+        "effect": "동시 조리 슬롯 +1",
+        "cost_gold": 100000,
+        "required_drop_item": "large_frying_pan",
+        "gdd_ref": "GDD_level.md §6 에피소드 업그레이드"
+      },
+      "steps": null
+    },
+    {
+      "id": "ep_raccoon",
+      "customer_id": "raccoon",
+      "name_ko": "타누키 에피소드",
+      "keyword": null,
+      "total_steps": null,
+      "status": "unplanned",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "타누키 방문률 상승 인테리어 아이템 — 미확정"
+      },
+      "special_upgrade_unlock": null,
+      "steps": null
+    },
+    {
+      "id": "ep_panda",
+      "customer_id": "panda",
+      "name_ko": "판판 에피소드",
+      "keyword": null,
+      "total_steps": null,
+      "status": "unplanned",
+      "completion_reward": {
+        "type": "interior_item",
+        "item_id": null,
+        "description": "판판 방문률 상승 인테리어 아이템 — 미확정"
+      },
+      "special_upgrade_unlock": null,
+      "steps": null
+    }
+  ]
+}

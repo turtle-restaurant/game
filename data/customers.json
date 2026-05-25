@@ -1,74 +1,225 @@
-[
-  {
-    "id": "tiger",
-    "name": "호랑님",
-    "animal": "tiger",
-    "culture": "korean",
-    "patience": 35,
-    "preferred_recipes": ["bibimbap", "doenjang_jjigae"],
-    "episode_id": "ep_tiger",
-    "episode_total_steps": 4,
-    "reward_recipe": "doenjang_jjigae",
-    "personality": "듬직하고 과묵하지만 음식에 진심인 중년 호랑이"
+{
+  "_meta": {
+    "file": "customers.json",
+    "description": "손님 데이터 — 일반 손님 4종 / 에피소드 손님 6종 정의",
+    "gdd_ref": "GDD_story.md §1 손님 시스템 / GDD_level.md §4 인내심 타이머",
+    "version": "v1.0",
+    "last_updated": "2026-05-25"
   },
-  {
-    "id": "rabbit",
-    "name": "솜이",
-    "animal": "rabbit",
-    "culture": "korean",
-    "patience": 20,
-    "preferred_recipes": ["bibimbap"],
-    "episode_id": "ep_rabbit",
-    "episode_total_steps": 3,
-    "reward_recipe": "tteokbokki",
-    "personality": "수험생. 항상 바쁘고 조금 예민하지만 마음은 따뜻함"
+  "patience_timer_rule": {
+    "color_yellow_threshold": 0.5,
+    "color_red_threshold": 0.25,
+    "note": "잔여 비율 기준 — 50% 이하 노랑, 25% 이하 빨강. GDD_level.md §4 기준",
+    "early_late_boundary": "Day 1~4 early 수치 적용, Day 5+ late 수치 적용"
   },
-  {
-    "id": "fox",
-    "name": "코코",
-    "animal": "fox",
-    "culture": "western",
-    "patience": 25,
-    "preferred_recipes": ["sandwich", "pasta"],
-    "episode_id": "ep_fox",
-    "episode_total_steps": 4,
-    "reward_recipe": "pasta",
-    "personality": "첫 자취를 시작한 새내기. 요리를 배우고 싶어함"
-  },
-  {
-    "id": "bear",
-    "name": "베어",
-    "animal": "bear",
-    "culture": "western",
-    "patience": 40,
-    "preferred_recipes": ["sandwich", "pasta"],
-    "episode_id": "ep_bear",
-    "episode_total_steps": 3,
-    "reward_recipe": "salad",
-    "personality": "다이어트 중인 대식가. 항상 배고프고 의지가 약함"
-  },
-  {
-    "id": "tanuki",
-    "name": "타누키",
-    "animal": "raccoon",
-    "culture": "japanese",
-    "patience": 30,
-    "preferred_recipes": ["sushi", "ramen"],
-    "episode_id": "ep_tanuki",
-    "episode_total_steps": 5,
-    "reward_recipe": "ramen",
-    "personality": "고향이 그리운 일본 출신 여행자. 향수병 있음"
-  },
-  {
-    "id": "panda",
-    "name": "판판",
-    "animal": "panda",
-    "culture": "chinese",
-    "patience": 28,
-    "preferred_recipes": ["jjajangmyeon", "dimsum"],
-    "episode_id": "ep_panda",
-    "episode_total_steps": 4,
-    "reward_recipe": "dimsum",
-    "personality": "워커홀릭 직장인 판다. 밥 먹는 것만이 유일한 휴식"
-  }
-]
+  "regular_customers": [
+    {
+      "id": "sparrow",
+      "name_ko": "참새",
+      "animal": "sparrow",
+      "type": "regular",
+      "patience_sec": {
+        "lunch_early": 20,
+        "lunch_late": 16,
+        "dinner_early": 16,
+        "dinner_late": 13
+      },
+      "gold_multiplier": 1.0,
+      "asset_id": "char_sparrow"
+    },
+    {
+      "id": "mouse",
+      "name_ko": "쥐",
+      "animal": "mouse",
+      "type": "regular",
+      "patience_sec": {
+        "lunch_early": 20,
+        "lunch_late": 16,
+        "dinner_early": 16,
+        "dinner_late": 13
+      },
+      "gold_multiplier": 1.0,
+      "asset_id": "char_mouse"
+    },
+    {
+      "id": "cat",
+      "name_ko": "고양이",
+      "animal": "cat",
+      "type": "regular",
+      "patience_sec": {
+        "lunch_early": 20,
+        "lunch_late": 16,
+        "dinner_early": 16,
+        "dinner_late": 13
+      },
+      "gold_multiplier": 1.0,
+      "asset_id": "char_cat"
+    },
+    {
+      "id": "dog",
+      "name_ko": "강아지",
+      "animal": "dog",
+      "type": "regular",
+      "patience_sec": {
+        "lunch_early": 20,
+        "lunch_late": 16,
+        "dinner_early": 16,
+        "dinner_late": 13
+      },
+      "gold_multiplier": 1.0,
+      "asset_id": "char_dog"
+    }
+  ],
+  "episode_customers": [
+    {
+      "id": "tiger",
+      "name_ko": "호랑님",
+      "animal": "tiger",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_tiger",
+      "visit_days": [5, 6, 12, 14],
+      "episode_end_day": 15,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "에피소드 완료(Day 15) 이후 일반 손님 풀 합류, 낮은 빈도 랜덤 방문"
+      },
+      "unlock_condition": {
+        "min_day": 5,
+        "required_cookware": null
+      },
+      "drop_item": null,
+      "asset_id": "char_tiger"
+    },
+    {
+      "id": "rabbit",
+      "name_ko": "솜이",
+      "animal": "rabbit",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_rabbit",
+      "visit_days": null,
+      "episode_end_day": null,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "에피소드 완료 이후 일반 손님 풀 합류 — 방문 날짜 미확정"
+      },
+      "unlock_condition": {
+        "min_day": null,
+        "required_cookware": null
+      },
+      "drop_item": "lucky_pot",
+      "asset_id": "char_rabbit"
+    },
+    {
+      "id": "fox",
+      "name_ko": "코코",
+      "animal": "fox",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_fox",
+      "visit_days": null,
+      "episode_end_day": null,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "미확정"
+      },
+      "unlock_condition": {
+        "min_day": null,
+        "required_cookware": null
+      },
+      "drop_item": null,
+      "asset_id": "char_fox"
+    },
+    {
+      "id": "bear",
+      "name_ko": "베어",
+      "animal": "bear",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_bear",
+      "visit_days": null,
+      "episode_end_day": null,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "미확정"
+      },
+      "unlock_condition": {
+        "min_day": null,
+        "required_cookware": "frying_pan_special"
+      },
+      "drop_item": "large_frying_pan",
+      "asset_id": "char_bear"
+    },
+    {
+      "id": "raccoon",
+      "name_ko": "타누키",
+      "animal": "raccoon",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_raccoon",
+      "visit_days": null,
+      "episode_end_day": null,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "미확정"
+      },
+      "unlock_condition": {
+        "min_day": null,
+        "required_cookware": null
+      },
+      "drop_item": null,
+      "asset_id": "char_raccoon"
+    },
+    {
+      "id": "panda",
+      "name_ko": "판판",
+      "animal": "panda",
+      "type": "episode",
+      "patience_sec": {
+        "lunch": 25,
+        "dinner": 20
+      },
+      "gold_multiplier": 1.5,
+      "episode_id": "ep_panda",
+      "visit_days": null,
+      "episode_end_day": null,
+      "after_episode": {
+        "joins_regular_pool": true,
+        "visit_weight": "low",
+        "note": "미확정"
+      },
+      "unlock_condition": {
+        "min_day": null,
+        "required_cookware": null
+      },
+      "drop_item": null,
+      "asset_id": "char_panda"
+    }
+  ]
+}
